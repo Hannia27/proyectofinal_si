@@ -1,0 +1,49 @@
+<!--- Con esta vista, vamos a poder observar las notas-->
+<body>
+<div class="jumbotron mt-4">
+  <h3 align="center">PRODUCTOS</h3>
+  <div class="form-grouo">
+    <p align="right"><a href="../products/add" class="btn btn-primary" type="submit"><i class='bx bx-plus'> Agregar
+          producto</i></a></p>
+  </div>
+  <br>
+  <table class="table table-light">
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Descripción</th>
+        <th scope="col">Categoria</th>
+        <th scope="col">Composición</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Stock</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each products}}
+      <tr>
+        <td>{{name}}</td>
+        <td>{{description}}</td>
+        <td>{{composition}}</td>
+        <td>{{category}}</td>
+        <td>{{precio}}</td>
+        <td>{{cantidad}}</td>
+        <td>
+          <div class="btn-group" role="group" aria-label="Basic example">
+            <a href="/products/edit/{{_id}}"><i class='bx bxs-pencil bx-sm'></i></a>
+            <form action="/products/delete/{{_id}}?_method=DELETE" method="POST">
+              <input type="hidden" name="_method" value="DELETE">
+              <button class="btn btn-link btn-block btn-sm" type="submit"><i class='bx bxs-trash  bx-sm'></i></button>
+            </form>
+          </div>
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+  <br>
+  <div class="form-grouo">
+    <p align="right"><a href="../notes" class="btn btn-success" type="submit">Regresar</a></p>
+  </div>
+</div>
+</body>

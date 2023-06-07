@@ -1,0 +1,64 @@
+<head>
+  <script>
+    var error_msg = "{{ alert }}";
+    if (error_msg) {
+      alert(error_msg);
+    }
+  </script>
+</head>
+<div class="jumbotron mt-4">
+  <h3 align="center">INVENTARIO</h3>
+  <br>
+  <div class="form-group">
+    <p align="right"><a href="../notes" class="btn btn-success" type="submit">Regresar</a></p>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 style="text-align: center;">Total de productos</h5>
+          <table class="table table-light">
+            <thead>
+              <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Cantidad</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each products}}
+              <tr>
+                <td>{{name}}</td>
+                <td>{{cantidad}}</td>
+              </tr>
+              {{/each}}
+              <br>
+              <br>
+            </tbody>
+          </table>
+          <br>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 style="text-align: center;">Ingresa Cantidad</h5>
+          <br>
+          <br>
+          <form action="/products/transactions" method="POST">
+            <input type="text" name="name" class="form-control" placeholder="Nombre del producto" {{name}} autofocus>
+            <br>
+            <div class="form-group">
+              <input type="text" name="cantidad" class="form-control" placeholder="Cantidad a Comprar" {{cantidad}}>
+            </div>
+            <br>
+            <br>
+            <div class="form-group" style="display: flex; justify-content: center;">
+              <button type="submit" class="btn btn-primary">Agregar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

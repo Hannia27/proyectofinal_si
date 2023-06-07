@@ -1,0 +1,67 @@
+<head>
+    <script>
+        var error_msg = "{{ alert }}";
+        if (error_msg) {
+            alert(error_msg);
+        }
+    </script>
+</head>
+
+<body>
+    <div class="jumbotron mt-4">
+        <b>
+            <h1 class="text-center">NUESTROS PRODUCTOS</h1>
+        </b>
+        <h4 class="text-center">Especialidades Me Late Chocolate.</h4>
+        <br>
+        <!--div class="form-grouo">
+    <p align="right"><a href="../products/transactions" class="btn btn-success" type="submit">Ver compras</a></p>
+  </div-->
+        <div class="row">
+            {{#each products}}
+            <div class="col-md-3">
+                <br>
+                <div class="card">
+                    <div class="card-body">
+                        <h4 style="text-align: center;">
+                            {{name}}
+                        </h4>
+                        <p>Descripción: {{description}}</p>
+                        </p>
+                        <p>Categoria: {{category}}</p>
+                        </p>
+                        <p>Composición: {{composition}}</p>
+                        </p>
+                        <p style="color: red;"><b>Precio: </b>{{precio}}</p>
+                        </p>
+                        <p style="color: green;"><b>Cantidad: </b>{{cantidad}}</p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        <br>
+        <div class="card">
+            <div class="card-body">
+                <div class="card-header">
+                    <p><b>AGREGA TU COMPRA CON:</b></p>
+                </div>
+                <p>
+                <form action="/products/usersproducts" method="POST">
+                    <input type="text" name="name" class="form-control" placeholder="Nombre del producto" {{name}}
+                        autofocus>
+                    <br>
+                    <div class="form-group">
+                        <input type="text" name="cantidad" class="form-control" placeholder="Cantidad a Comprar"
+                            {{cantidad}}>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary btn-block" type="submit">Comprar</button>
+                    </div>
+                </form>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>

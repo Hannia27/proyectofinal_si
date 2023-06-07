@@ -1,0 +1,30 @@
+<div class="jumbotron mt-4">
+    <h3 align="center">NEWSLETTER</h3>
+    <br>
+    <br>
+    <div class="form-group">
+        <p align="right"><a href="../notes" class="btn btn-success" type="submit">Regresar</a></p>
+    </div>
+    <br>
+    <div class="col-md-9 mx-auto">
+        <div class="card">
+            <div class="card-header">
+                <h5>Nuevo Newsletter</h5>
+            </div>
+            <div class="card-body">
+                <form action="/notes/newnote" method="POST">
+                    <div class="form-group">
+                        <input type="text" name="title" class="form-control" placeholder="Titulo" autofocus>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="description" class="form-control" placeholder="Descripción"></textarea>
+                    </div>
+                    <div class="form-group" style="display: flex; justify-content: center;">
+                        <button type="submit" class="btn btn-primary">Agregar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br>
+</div>

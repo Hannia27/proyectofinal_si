@@ -1,0 +1,13 @@
+.main {
+    /*background: url(https://i.pinimg.com/564x/da/d1/83/dad183ca02a9f37e7467a77b87cac16e.jpg) repeat;*/
+    /*background: url(https://i.pinimg.com/564x/dc/5d/5b/dc5d5b56bc50a59871b77e3aac02be6b.jpg) repeat;*/
+    /*background: url(https://i.pinimg.com/564x/b4/0b/ef/b40bef0bfece0666a4a9b27df950db88.jpg) repeat;*/
+    background:url(https://i.pinimg.com/564x/1f/33/b9/1f33b9232d425d1b73a1b5c6057ec111.jpg)repeat;
+    /*background: #F8F9FA;  /* fallback for old browsers */
+    /*background: -webkit-linear-gradient(to right, #61045F, #AA076B);  /* Chrome 10-25, Safari 5.1-6 */
+    /*background: linear-gradient(to right, #61045F, #AA076B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
+}   
+
+.signin{
+    width: 30%;
+}

@@ -1,0 +1,77 @@
+<!--- esta vista, vamos a poder observar las notas-->
+<div class="jumbotron mt-4">
+     <h3 style="text-align: center;"><b>¡ HOLA 
+    {{#each user}}
+     {{name}}
+    {{/each}}!</b></h3>
+    <h5 style="text-align: center;"><b>Te damos la bienvenida a Me Late Chocolate.</b></h5>
+    <br>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="../notes/add">Nuevo Newsletter <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="../products">Nuevo Producto <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="../users/signup">Nuevo Usuario<span class="sr-only">(current)</span></a>
+        </li>
+         <li class="nav-item">
+            <a class="nav-link" href="../products/transactions">Inventario<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Perfil
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="/">Cerrar sesión</a>
+            </div>
+        </li>
+        </ul>
+    </div>
+    </nav>
+    <br>
+    <div class="row">
+        {{#each notes}}
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h4
+                            class="card-title d-flex justify-content-between align-items-center"
+                        >
+                            {{title}}
+                            <a href="/notes/edit/{{_id}}"><i
+                                    class="bx bxs-pencil"
+                                ></i></a>
+                        </h4>
+                        <p>{{description}}</p>
+                        <form
+                            action="/notes/delete/{{_id}}?_method=DELETE"
+                            method="POST"
+                        >
+                            <input
+                                type="hidden"
+                                name="_method"
+                                value="DELETE"
+                            />
+                            <button
+                                class="btn btn-danger btn-block btn-sm"
+                                type="submit"
+                            >Eliminar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        {{else}}
+            <div class="card mx-auto">
+                <div class="card-body">
+                    <p class="lead">No hay Newsletter aún.</p>
+                    <a href="/notes/add" class="btn btn-success btn-block">Crea
+                        un Newsletter.</a>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</div>
